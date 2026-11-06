@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { FaBars, FaTimes, FaHome, FaUser, FaCode, FaProjectDiagram, FaEnvelope } from 'react-icons/fa'
+import { FaBars, FaTimes, FaHome, FaUser, FaCode, FaProjectDiagram, FaEnvelope, FaGithub } from 'react-icons/fa'
+import { CONTACT } from '../config/contact'
 import { useLanguage } from '../config/i18n'
 
 const LINKS = [
@@ -16,26 +17,37 @@ export default function Navbar() {
 
   return (
     <nav className="navbar-portfolio">
-      <a href="#home" className="nav-logo">ToanNQ.</a>
-      <div id="primary-navigation" className={`nav-links ${open ? 'open' : ''}`}>
-        {LINKS.map((l) => (
-          <a key={l.id} href={`#${l.id}`} onClick={() => setOpen(false)}>
-            <l.icon aria-hidden="true" /> {t(l.key)}
+      <div className="navbar-inner">
+        <a href="#home" className="nav-logo">ToanNQ.</a>
+        <div id="primary-navigation" className={`nav-links ${open ? 'open' : ''}`}>
+          {LINKS.map((l) => (
+            <a key={l.id} href={`#${l.id}`} onClick={() => setOpen(false)}>
+              <l.icon aria-hidden="true" /> {t(l.key)}
+            </a>
+          ))}
+          <a
+            href={CONTACT.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-resume"
+            onClick={() => setOpen(false)}
+          >
+            <FaGithub aria-hidden="true" /> {t('nav.resume')}
           </a>
-        ))}
-        <button className="lang-btn" onClick={toggle} aria-label={t('lang.toggle')}>
-          {t('lang.toggle')}
+          <button className="lang-btn" onClick={toggle} aria-label={t('lang.toggle')}>
+            {t('lang.toggle')}
+          </button>
+        </div>
+        <button
+          className="nav-hamburger"
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+          aria-expanded={open}
+          aria-controls="primary-navigation"
+        >
+          {open ? <FaTimes /> : <FaBars />}
         </button>
       </div>
-      <button
-        className="nav-hamburger"
-        onClick={() => setOpen(!open)}
-        aria-label="Menu"
-        aria-expanded={open}
-        aria-controls="primary-navigation"
-      >
-        {open ? <FaTimes /> : <FaBars />}
-      </button>
     </nav>
   )
 }

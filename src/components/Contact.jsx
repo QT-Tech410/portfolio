@@ -32,12 +32,27 @@ export default function Contact() {
       <h2 className="section-title">{t('contact.title')}</h2>
       <div className="contact-grid">
         <div className="contact-info">
-          <a href={`mailto:${CONTACT.email}`}><FaEnvelope /> {CONTACT.email}</a>
-          <a href={`tel:${CONTACT.phone}`}><FaPhone /> {CONTACT.phoneDisplay}</a>
-          <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /> LinkedIn</a>
-          <a href={CONTACT.github} target="_blank" rel="noopener noreferrer"><FaGithub /> GitHub</a>
+          <p className="contact-lead">{t('contact.lead')}</p>
+          <ul className="contact-list">
+            <li>
+              <span className="contact-ico"><FaEnvelope aria-hidden="true" /></span>
+              <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+            </li>
+            <li>
+              <span className="contact-ico"><FaPhone aria-hidden="true" /></span>
+              <a href={`tel:${CONTACT.phone}`}>{CONTACT.phoneDisplay}</a>
+            </li>
+            <li>
+              <span className="contact-ico"><FaLinkedin aria-hidden="true" /></span>
+              <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </li>
+            <li>
+              <span className="contact-ico"><FaGithub aria-hidden="true" /></span>
+              <a href={CONTACT.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+            </li>
+          </ul>
           <button onClick={copyEmail} className="copy-btn">
-            <FaCopy /> {copied ? '✓' : ''} {t('contact.copyEmail')}
+            <FaCopy aria-hidden="true" /> {copied ? '✓ ' : ''}{t('contact.copyEmail')}
           </button>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>

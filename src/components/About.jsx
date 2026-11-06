@@ -23,11 +23,12 @@ export default function About() {
           )}
         </div>
         <div className="about-text">
+          <p className="about-role">{t('about.role')}</p>
           <p>{t('about.p1')}</p>
           <p>{t('about.p2')}</p>
           <ul className="about-meta">
-            <li><FaMapMarkerAlt /> {t('about.location')}</li>
-            <li className="open-to-work"><FaCheckCircle /> {t('about.openToWork')}</li>
+            <li><FaMapMarkerAlt aria-hidden="true" /> {t('about.location')}</li>
+            <li className="open-to-work"><FaCheckCircle aria-hidden="true" /> {t('about.openToWork')}</li>
           </ul>
         </div>
       </div>

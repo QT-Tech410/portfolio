@@ -37,15 +37,26 @@ export default function Home() {
 
   return (
     <section id="home" className="hero">
-      <h2 className="hero-hello">{t('home.hello')}</h2>
-      <h1 className="hero-name">{CONTACT.name}</h1>
-      <div className="hero-type">
-        <span className="typed-accent">{typed}</span>
-        <span className="cursor-blink">|</span>
-      </div>
-      <div className="hero-cta">
-        <a href="#projects" className="btn-primary-cta">{t('home.btnProjects')}</a>
-        <a href="#contact" className="btn-outline-cta">{t('home.btnContact')}</a>
+      <div className="hero-inner">
+        <div className="hero-copy">
+          <p className="hero-hello">{t('home.hello')}</p>
+          <h1 className="hero-name">{CONTACT.name}</h1>
+          <div className="hero-type">
+            <span className="typed-accent">{typed}</span><span className="cursor-blink" />
+          </div>
+          <p className="hero-desc">{t('home.desc')}</p>
+          <div className="hero-cta">
+            <a href="#projects" className="btn-primary-cta">{t('home.btnProjects')}</a>
+            <a href="#contact" className="btn-outline-cta">{t('home.btnContact')}</a>
+          </div>
+        </div>
+        <div className="hero-visual" aria-hidden="true">
+          <div className="hero-orb" />
+          <div className="hero-ring" />
+          <div className="hero-chip hero-chip--react">{'</>'}</div>
+          <div className="hero-chip hero-chip--node">JS</div>
+          <div className="hero-chip hero-chip--db">SQL</div>
+        </div>
       </div>
     </section>
   )
