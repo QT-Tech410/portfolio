@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { PROJECTS } from '../config/projects'
 import { useLanguage } from '../config/i18n'
@@ -6,6 +6,15 @@ import { useLanguage } from '../config/i18n'
 export default function Projects() {
   const { t, lang } = useLanguage()
   const [selected, setSelected] = useState(null)
+
+  useEffect(() => {
+    if (!selected) return
+    function onKeyDown(e) {
+      if (e.key === 'Escape') setSelected(null)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [selected])
 
   return (
     <section id="projects" className="section">
@@ -38,7 +47,12 @@ export default function Projects() {
 
       {selected && (
         <div className="modal-overlay" onClick={() => setSelected(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="modal-content"
+            role="dialog"
+            aria-modal="true"
+            onClick={(e) => e.stopPropagation()}
+          >
             <h3>{selected.title}</h3>
             <p>{lang === 'vi' ? selected.longVi : selected.longEn}</p>
             <h4>{t('projects.tech')}</h4>

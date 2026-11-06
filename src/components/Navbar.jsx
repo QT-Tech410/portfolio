@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <nav className="navbar-portfolio">
       <a href="#home" className="nav-logo">ToanNQ.</a>
-      <div className={`nav-links ${open ? 'open' : ''}`}>
+      <div id="primary-navigation" className={`nav-links ${open ? 'open' : ''}`}>
         {LINKS.map((l) => (
           <a key={l.id} href={`#${l.id}`} onClick={() => setOpen(false)}>{t(l.key)}</a>
         ))}
@@ -25,7 +25,13 @@ export default function Navbar() {
           {t('lang.toggle')}
         </button>
       </div>
-      <button className="nav-hamburger" onClick={() => setOpen(!open)} aria-label="Menu">
+      <button
+        className="nav-hamburger"
+        onClick={() => setOpen(!open)}
+        aria-label="Menu"
+        aria-expanded={open}
+        aria-controls="primary-navigation"
+      >
         {open ? <FaTimes /> : <FaBars />}
       </button>
     </nav>

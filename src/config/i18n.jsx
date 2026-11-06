@@ -91,6 +91,13 @@ export function LanguageProvider({ children }) {
     } catch {
       // storage unavailable (e.g. SSR, private mode) — language still works in-memory
     }
+    try {
+      if (typeof document !== 'undefined') {
+        document.documentElement.lang = lang
+      }
+    } catch {
+      // document unavailable (e.g. SSR) — language still works in-memory
+    }
   }, [lang])
 
   const t = (key) => dict[lang][key] ?? key

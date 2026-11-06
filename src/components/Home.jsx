@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { CONTACT } from '../config/contact'
 import { useLanguage } from '../config/i18n'
 
@@ -28,8 +28,11 @@ function useTypewriter(words, speed = 120) {
 }
 
 export default function Home() {
-  const { t } = useLanguage()
-  const roles = [t('home.type1'), t('home.type2'), t('home.type3')]
+  const { t, lang } = useLanguage()
+  const roles = useMemo(
+    () => [t('home.type1'), t('home.type2'), t('home.type3')],
+    [t, lang]
+  )
   const typed = useTypewriter(roles)
 
   return (
@@ -37,8 +40,8 @@ export default function Home() {
       <h2 className="hero-hello">{t('home.hello')}</h2>
       <h1 className="hero-name">{CONTACT.name}</h1>
       <div className="hero-type">
-        <span className="accent">{typed}</span>
-        <span className="cursor">|</span>
+        <span className="typed-accent">{typed}</span>
+        <span className="cursor-blink">|</span>
       </div>
       <div className="hero-cta">
         <a href="#projects" className="btn-primary-cta">{t('home.btnProjects')}</a>
