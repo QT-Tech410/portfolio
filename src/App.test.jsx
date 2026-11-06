@@ -4,6 +4,6 @@ import App from './App'
 describe('App', () => {
   test('renders without crashing', () => {
     render(<App />)
-    expect(screen.getByText('Portfolio skeleton')).toBeInTheDocument()
+    expect(screen.getByText('quangtoan2005.work@gmail.com')).toBeInTheDocument()
   })
 })
