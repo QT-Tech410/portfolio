@@ -1,7 +1,13 @@
+import { LanguageProvider } from './config/i18n'
+import Navbar from './components/Navbar'
+
 export default function App() {
   return (
-    <div>
-      <p>Portfolio skeleton</p>
-    </div>
+    <LanguageProvider>
+      <Navbar />
+      <main>
+        <p>Portfolio skeleton</p>
+      </main>
+    </LanguageProvider>
   )
 }
