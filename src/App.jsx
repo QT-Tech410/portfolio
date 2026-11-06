@@ -11,8 +11,8 @@ export default function App() {
   return (
     <LanguageProvider>
       <Navbar />
-      <Home />
       <main>
+        <Home />
         <About />
         <Skills />
         <Projects />
