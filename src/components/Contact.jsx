@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaCopy } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaCopy, FaFileAlt } from 'react-icons/fa'
 import { CONTACT } from '../config/contact'
 import { useLanguage } from '../config/i18n'
 
@@ -51,13 +51,26 @@ export default function Contact() {
               <a href={CONTACT.github} target="_blank" rel="noopener noreferrer">GitHub</a>
             </li>
           </ul>
-          <button onClick={copyEmail} className="copy-btn">
-            <FaCopy aria-hidden="true" /> {copied ? '✓ ' : ''}{t('contact.copyEmail')}
-          </button>
+          <div className="contact-actions-row">
+            <button onClick={copyEmail} className="copy-btn">
+              <FaCopy aria-hidden="true" /> {copied ? '✓ ' : ''}{t('contact.copyEmail')}
+            </button>
+            {CONTACT.cvUrl && (
+              <a
+                href={CONTACT.cvUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="copy-btn cv-link-btn"
+              >
+                <FaFileAlt aria-hidden="true" /> {t('contact.viewCv')}
+              </a>
+            )}
+          </div>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <input
             placeholder={t('contact.namePh')}
+            aria-label={t('contact.namePh')}
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -65,12 +78,14 @@ export default function Contact() {
           <input
             type="email"
             placeholder={t('contact.emailPh')}
+            aria-label={t('contact.emailPh')}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
           <textarea
             placeholder={t('contact.msgPh')}
+            aria-label={t('contact.msgPh')}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows={5}

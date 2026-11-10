@@ -1,5 +1,15 @@
 import { useState } from 'react'
-import { FaBars, FaTimes, FaHome, FaUser, FaCode, FaProjectDiagram, FaEnvelope, FaGithub } from 'react-icons/fa'
+import {
+  FaBars,
+  FaTimes,
+  FaHome,
+  FaUser,
+  FaCode,
+  FaProjectDiagram,
+  FaEnvelope,
+  FaGithub,
+  FaFileAlt
+} from 'react-icons/fa'
 import { CONTACT } from '../config/contact'
 import { useLanguage } from '../config/i18n'
 
@@ -12,7 +22,7 @@ const LINKS = [
 ]
 
 export default function Navbar() {
-  const { t, toggle, lang } = useLanguage()
+  const { t, toggle } = useLanguage()
   const [open, setOpen] = useState(false)
 
   return (
@@ -25,6 +35,17 @@ export default function Navbar() {
               <l.icon aria-hidden="true" /> {t(l.key)}
             </a>
           ))}
+          {CONTACT.cvUrl && (
+            <a
+              href={CONTACT.cvUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-cv"
+              onClick={() => setOpen(false)}
+            >
+              <FaFileAlt aria-hidden="true" /> {t('nav.cvBtn')}
+            </a>
+          )}
           <a
             href={CONTACT.github}
             target="_blank"
@@ -41,7 +62,7 @@ export default function Navbar() {
         <button
           className="nav-hamburger"
           onClick={() => setOpen(!open)}
-          aria-label="Menu"
+          aria-label={t('nav.menu')}
           aria-expanded={open}
           aria-controls="primary-navigation"
         >

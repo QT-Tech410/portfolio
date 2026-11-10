@@ -1,0 +1,58 @@
+﻿## UI Pro Max Search Results
+**Domain:** style | **Query:** developer portfolio kinetic type bold
+**Source:** styles.csv | **Found:** 3 results
+
+### Result 1
+- **Style Category:** Kinetic Typography
+- **Type:** General
+- **Keywords:** Motion text, animated type, moving letters, dynamic, typing effect, morphing, scroll-triggered text
+- **Primary Colors:** Flexible - high contrast recommended, bold colors for emphasis, animation-friendly palette
+- **Effects & Animation:** @keyframes text animation, typing effect, background-clip: text, GSAP ScrollTrigger, split text
+- **Best For:** Hero sections, marketing sites, video platforms, storytelling, creative portfolios, landing pages
+- **Light Mode ✓:** ✓ Full
+- **Dark Mode ✓:** ✓ Full
+- **Performance:** ⚠ Moderate
+- **Accessibility:** ❌ Poor (motion)
+- **Framework Compatibility:** GSAP 10/10, Framer Motion 10/10
+- **Complexity:** High
+- **AI Prompt Keywords:** Design with kinetic typography. Use: animated text, scroll-triggered reveals, typing effects, letter-by-letter animations, morphing text, gradient text fills, oversized hero text, text as the main visual element.
+- **CSS/Technical Keywords:** @keyframes for text animation, background-clip: text, GSAP SplitText, typing effect (steps()), transform on letters, scroll-triggered (Intersection Observer), variable fonts for morphing
+- **Implementation Checklist:** ☐ Text animations smooth, ☐ Prefers-reduced-motion respected, ☐ Fallback for no-JS, ☐ Mobile performance ok, ☐ Typing effect timed, ☐ Scroll triggers work
+- **Design System Variables:** --text-animation-duration: 1s, --letter-delay: 0.05s, --typing-speed: 100ms, --gradient-text: linear-gradient(90deg, #color1, #color2), --morph-duration: 0.5s
+
+### Result 2
+- **Style Category:** Bold Typography (Mobile Poster)
+- **Type:** Mobile
+- **Keywords:** bold typography, editorial, poster, broadsheet, vermillion, negative space, edge-to-edge type, underline CTA, near-black, warm white
+- **Primary Colors:** Near Black #0A0A0A, Warm White #FAFAFA
+- **Effects & Animation:** Hero headlines 48–72px (5:1 vs body size), tight tracking (-1.5px), edge-to-edge type, massive vertical spacing (60px+), underline CTAs (2–3px accent line), instant 200ms transitions (no bounce), strictly 0px radius containers, color shifts for active state instead of elevation
+- **Best For:** Creative brand heroes, reading-focused apps, event/exhibition pages, editorial mobile experiences, landing hero sections
+- **Light Mode ✓:** ✓ Dark Mode Primary
+- **Dark Mode ✓:** ◐ Light sections optional
+- **Performance:** ⚡ Excellent
+- **Accessibility:** ✓ Contrast 18:1 achievable
+- **Framework Compatibility:** React Native 10/10, Expo 10/10
+- **Complexity:** Medium
+- **AI Prompt Keywords:** Design a Bold Typography mobile screen. Background #0A0A0A, text #FAFAFA, accent #FF3D00. Use Inter Tight/Inter 600+ for all type; JetBrains Mono for labels. Headline: 56–72px, tracking -1.5, lineHeight 1.1, full-bleed width with slight bleed off-screen. Body: 16–18px, leading 1.6. Buttons: underlin...
+- **CSS/Technical Keywords:** backgroundColor: '#0A0A0A', color: '#FAFAFA', accent: '#FF3D00', borderColor: '#262626', borderRadius: 0, paddingHorizontal: 24, headline style: fontSize:56–72, fontWeight:'700/800', letterSpacing:-1.5, lineHeight:1.1*fontSize, body: fontSize:16–18, lineHeight:1.6*fontSize, underline CTA: 2–3px heig...
+- **Implementation Checklist:** ☐ H1 at least 4–5× body size, ☐ All containers 0 radius, ☐ Underline CTA pattern used, ☐ Large vertical gaps between sections, ☐ No shadows or soft corners, ☐ Accent used only for interaction, ☐ Text bleeds to/over screen edges, ☐ Animation timings 200ms, ☐ Accessible contrast ≥ 18:1, ☐ Body text never below 16px
+- **Design System Variables:** --bg: #0A0A0A, --fg: #FAFAFA, --muted: #1A1A1A, --muted-fg: #737373, --accent: #FF3D00, --accent-fg: #0A0A0A, --border: #262626, --font-primary: Inter Tight, --font-display: Playfair Display Italic, --font-mono: JetBrains Mono
+
+### Result 3
+- **Style Category:** Kinetic Brutalism (Mobile)
+- **Type:** Mobile
+- **Keywords:** kinetic, brutalism, motion, marquee, acid yellow, uppercase, oversized, aggressive typography, street, zine, high contrast, scroll-driven, haptic, reanimated
+- **Primary Colors:** Acid Yellow #DFE104, Rich Black #09090B
+- **Effects & Animation:** Infinite marquee (Reanimated, Linear easing, 5s loop, hard clip), hero parallax (scale 1.0→1.3 + fade), sticky section header push, card flood inversion on press (bg→#DFE104, text→#000000), haptic Medium on every press, scroll-triggered interpolate transforms, 0px radius, 2px borders, 100ms color tr...
+- **Best For:** Immersive storytelling apps, brand flagship mobile, music/culture platforms, sports apps, underground zines, limited-edition product drops, performance dashboards
+- **Light Mode ✓:** ✓ Dark Primary
+- **Dark Mode ✓:** ◐ Dark only (inverted sections)
+- **Performance:** ⚡ Excellent (native driver required)
+- **Accessibility:** ⚠ WCAG AA (verify zinc body text on dark bg)
+- **Framework Compatibility:** React Native 10/10, Expo 10/10, Reanimated 10/10, NativeWind 9/10
+- **Complexity:** High
+- **AI Prompt Keywords:** Design a Kinetic Brutalism mobile app. Canvas: #09090B. Primary accent: Acid Yellow #DFE104 (text: #000000). Typography: Space Grotesk BOLD. Display text: 60–120pt, uppercase, letterSpacing -1, lineHeight 0.9–1.1x. Body: 18–20pt. Labels: 12pt uppercase letterSpacing +2. Add infinite marquee rows (Re...
+- **CSS/Technical Keywords:** borderRadius: 0, borderWidth: 2, borderColor: '#3F3F46', backgroundColor: '#09090B', color: '#FAFAFA', fontWeight: '800 or 900', letterSpacing: -1 (large) or 2 (labels), lineHeight: 0.9–1.1 * fontSize, Reanimated withRepeat marquee timing 5000ms Easing.linear, Interpolate scroll→scale + opacity, Hap...
+- **Implementation Checklist:** ☐ Infinite marquee rows (Reanimated, no fade edges), ☐ Hero parallax scroll (scale+opacity Interpolate), ☐ All display text uppercase, ☐ 0px border-radius, ☐ 2px borders, ☐ Acid yellow card flood on press, ☐ Haptic Medium on every interaction, ☐ Font scale helper (windowWidth/375*size), ☐ Safe area for massive headers, ☐ Reduced motion stops marquees
+- **Design System Variables:** --bg: #09090B, --fg: #FAFAFA, --muted: #27272A, --muted-fg: #A1A1AA, --accent: #DFE104, --accent-fg: #000000, --border: #3F3F46, --radius: 0px, --border-width: 2px, --shadow: none, --marquee-speed: 5000ms, --press-duration: 100ms, --font: Space Grotesk or Inter
+
